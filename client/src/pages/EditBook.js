@@ -1,11 +1,12 @@
 import React, { useState } from "react"
 import { useParams } from "react-router-dom"
 import useFetch from "../hooks/useFetch"
-import BookForm from "../components/BookForm"
+import BookForm from "../components/book_form/BookForm"
 
 const EditBook = () => {
 	const { id } = useParams()
-	const { data, loading, error } = useFetch(`http://localhost:8800/books/${id}`)
+	const url = `${process.env.REACT_APP_SERVER_URL}/api/books/${id}`
+	const { data, loading, error } = useFetch(url)
 
 	if (loading) return <div>Loading...</div>
 	if (error) return <div>Error: {error.message}</div>
@@ -13,7 +14,7 @@ const EditBook = () => {
 	return (
 		<div>
 			<h1>Edit Book</h1>
-			<BookForm mode="edit" bookData={data} />
+			<BookForm bookData={data} isEditMode={true} />
 		</div>
 	)
 }

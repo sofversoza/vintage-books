@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import styles from "./BookForm.module.css"
 import { useNavigate } from "react-router-dom"
 import axios from "axios"
 
@@ -9,7 +10,11 @@ const BookForm = ({ mode, bookData }) => {
 	// init form state based on mode
 	const [formData, setFormData] = useState({
 		title: mode === "edit" ? bookData.title : "",
-		desc: mode === "edit" ? bookData.desc : "",
+		author: mode === "edit" ? bookData.author : "",
+		publisher: mode === "edit" ? bookData.publisher : "",
+		publication_year: mode === "edit" ? bookData.publication_year : "",
+		condition: mode === "edit" ? bookData.condition : "",
+		description: mode === "edit" ? bookData.description : "",
 		price: mode === "edit" ? bookData.price : "",
 		cover: null, // for new cover uploads
 	})
@@ -30,7 +35,11 @@ const BookForm = ({ mode, bookData }) => {
 
 		const data = new FormData() // creates new empty FormData object
 		data.append("title", formData.title) // append key/value pair
-		data.append("desc", formData.desc)
+		data.append("author", formData.author)
+		data.append("publisher", formData.publisher)
+		data.append("publication_year", formData.publication_year)
+		data.append("condition", formData.condition)
+		data.append("description", formData.description)
 		data.append("price", Number(formData.price) || 0)
 		data.append("cover", formData.cover)
 
@@ -63,9 +72,8 @@ const BookForm = ({ mode, bookData }) => {
 	}
 
 	return (
-		<div>
-			<h4>Book Form Component</h4>
-			<form onSubmit={handleSubmit}>
+		<div className={styles.formContainer}>
+			<form onSubmit={handleSubmit} className={styles.formContainer__form}>
 				<input
 					type="text"
 					name="title"
@@ -75,9 +83,37 @@ const BookForm = ({ mode, bookData }) => {
 				/>
 				<input
 					type="text"
-					name="desc"
+					name="author"
+					placeholder="author"
+					value={formData.author}
+					onChange={handleInputChange}
+				/>
+				<input
+					type="text"
+					name="publisher"
+					placeholder="publisher"
+					value={formData.publisher}
+					onChange={handleInputChange}
+				/>
+				<input
+					type="number"
+					name="publication_year"
+					placeholder="publication_year"
+					value={formData.publication_year}
+					onChange={handleInputChange}
+				/>
+				<input
+					type="text"
+					name="condition"
+					placeholder="condition"
+					value={formData.condition}
+					onChange={handleInputChange}
+				/>
+				<textarea
+					type="text"
+					name="description"
 					placeholder="description"
-					value={formData.desc}
+					value={formData.description}
 					onChange={handleInputChange}
 				/>
 				<input
@@ -88,6 +124,7 @@ const BookForm = ({ mode, bookData }) => {
 					onChange={handleInputChange}
 				/>
 				<input type="file" name="cover" onChange={handleFileChange} />
+
 				{mode === "edit" && bookData.cover && (
 					<div>
 						<img

@@ -1,0 +1,29 @@
+.card {
+  background-color: rgb(231, 108, 128);
+  max-width: 100px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.card span {
+  margin-bottom: 5px;
+}
+
+.card__cover {
+  width: 100%;
+  max-height: 200px;
+}
+
+.card__title {
+  font-size: 0.9rem;
+  word-wrap: wrap;
+}
+
+.card__author {
+  font-size: 0.75rem;
+}

@@ -1,0 +1,24 @@
+/* reset */
+*,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+a,
+li {
+  color: inherit;
+  text-decoration: none;
+}

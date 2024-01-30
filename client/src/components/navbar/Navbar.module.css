@@ -1,0 +1,26 @@
+.navbar {
+  background-color: darkslategray;
+  color: #fff;
+  min-height: 60px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* .navbar__logo {} */
+
+.navbar__links {
+  min-width: 30%;
+  display: flex;
+  justify-content: space-between;
+  /* background-color: #fff; */
+}
+
+.navbar__link {
+  padding: 0 10px;
+}
+
+.navbar__link_active {
+  color: pink;
+}
