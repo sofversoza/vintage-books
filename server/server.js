@@ -1,6 +1,7 @@
 import express from "express"
 import cors from "cors"
 import bookRoutes from "./routes/bookRoutes.js"
+import genreRoutes from "./routes/genreRoutes.js"
 
 const PORT = process.env.PORT || 3000
 const app = express()
@@ -16,9 +17,9 @@ app.use(express.static("public"))
 // middleware; allows client to make http requests
 app.use(cors())
 
-// book routes
-app.use("/", bookRoutes)
-app.use("/books", bookRoutes)
+// book & genre routes
+app.use("/api", bookRoutes)
+app.use("/api", genreRoutes)
 
 // api req for backend home
 app.get("/", (req, res) => {
