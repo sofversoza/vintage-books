@@ -1,27 +1,32 @@
 import React from "react"
-import styles from "./BookList.module.css"
-import useFetch from "../../hooks/useFetch"
-import BookCard from "../book_card/BookCard"
+import { Link } from "react-router-dom"
+import "./bookList.css"
 
-const BookList = () => {
-	const url = `${process.env.REACT_APP_SERVER_URL}/api/books`
-	const { data: books, loading, error } = useFetch(url)
-
-	if (loading) return <div>Loading...</div>
-	if (error) return <div>Error: {error.message}</div>
-
+export default function BookList({ books }) {
 	return (
-		<div>
-			<h3>Book List</h3>
-			<ul className={styles.booklist}>
-				{books.map((book) => (
-					<li key={book.id}>
-						<BookCard book={book} />
-					</li>
-				))}
-			</ul>
-		</div>
+		<ul className="booklist">
+			{books.map((book) => (
+				<li key={book.id} className="book">
+					<BookCover book={book} />
+					<span className="title">{book.title}</span>
+				</li>
+			))}
+		</ul>
 	)
 }
 
-export default BookList
+function BookCover({ book }) {
+	const serverBaseURL = process.env.REACT_APP_SERVER_URL
+	const coverImageURL = `${serverBaseURL}/${book.cover.replace("public/", "")}`
+	// removed public from the stored path since its the root for static files in the server
+
+	return (
+		<Link to={`/books/${book.id}`}>
+			<img
+				src={coverImageURL}
+				alt={`${book.title}'s cover image`}
+				className="coverIMG"
+			/>
+		</Link>
+	)
+}

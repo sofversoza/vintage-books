@@ -1,11 +1,11 @@
 import React from "react"
-import BookList from "../components/book_list/BookList"
+import "../styles/home.css"
+import Hero from "../components/hero/Hero"
 
 const Home = () => {
 	return (
-		<div>
-			<h1>Home page</h1>
-			<BookList />
+		<div className="home">
+			<Hero />
 		</div>
 	)
 }

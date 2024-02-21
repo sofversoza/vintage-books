@@ -1,0 +1,128 @@
+.bookDetails {
+  width: 100vw;
+  padding: 0 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  border: 1px solid red;
+}
+
+.bookDetails .coverIMG,
+.bookDetails .details {
+  margin: 20px 0;
+}
+
+.bookDetails .coverIMG {
+  width: 400px;
+  height: 600px;
+}
+
+.bookDetails .details {
+  flex: 1;
+  height: 600px;
+  overflow: hidden;
+  overflow-y: auto;
+  color: var(--clr-white);
+  background-color: var(--clr-gray-400);
+}
+
+.bookDetails .heading  {
+  padding: 15px;
+  font-family: var(--ff-info);
+  background-color: var(--clr-primary);
+}
+
+.bookDetails .heading h1 {
+  font-size: var(--fs-header);
+}
+
+.bookDetails .heading span {
+  font-size: var(--fs-body);
+}
+
+.bookDetails .description {
+  padding: 30px 15px;
+  background-color: var(--clr-gray-600);
+}
+
+.bookDetails .description p {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.55px;
+  word-spacing: 0.25px;
+}
+
+.bookDetails .description h5,
+.bookDetails .information h5 {
+  margin-bottom: 10px;
+  font-size: var(--fs-title);
+  font-family: var(--ff-info);
+}
+
+.bookDetails .information {
+  padding: 30px 15px 0 15px;
+}
+
+.bookDetails .information .flex-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bookDetails .information .flex-group .group {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bookDetails .information #details-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: var(--ff-info);
+  font-size: var(--fs-info);
+}
+
+.bookDetails .information .flex-group .group span {
+  display: block;
+  font-size: var(--fs-xsm);
+  font-family: var(--ff-info);
+}
+
+.bookDetails .information .flex-group .group p {
+  margin-bottom: 10px;
+  font-weight: var(--fw-semibold);
+  font-style: var(--fs-italic);
+  letter-spacing: 0.75px;
+}
+
+.bookDetails .information .flex-group .group.one {
+  flex: 3;
+}
+
+.bookDetails .information .flex-group .group.two {
+  flex: 2;
+}
+
+.bookDetails .information .flex-group .group.three {
+  flex: 1;
+}
+
+.bookDetails .information .flex-group .group.three p {
+  margin-bottom: 0;
+  font-style: italic;
+}
+
+.bookDetails .information .flex-group .group .col {
+  margin-top: 22px; /* margin from span title */
+  width: 100%;
+}
+
+.bookDetails .information .flex-group .group.one .col:first-of-type {
+  flex: 1.5;
+}
+
+.bookDetails .information .flex-group .group.one .col:not(:first-of-type) {
+  flex: 2;
+}

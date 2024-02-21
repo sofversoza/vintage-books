@@ -1,9 +1,87 @@
+/* custom properties */
+:root {
+  --ff-primary: freight-big-pro, serif; /* 400, 500 */
+  --ff-info: pragmatica-extended, sans-serif; /* 400, 500, 700 */
+  --ff-logo: neue-haas-grotesk-display, sans-serif; /* 500, 600 */
+
+  --ff-body: var(--ff-primary);
+  --ff-nav: var(--ff-info);
+
+  --fw-normal: 400;
+  --fw-semibold: 500;
+  --fw-bold: 600;
+  --fw-heavy: 700;
+
+  --fs-italic: italic;
+
+  --fs-xxsm: 0.625rem; /* 12px */
+  --fs-xsm: 0.75rem; /* 12px */
+  --fs-info: 0.875rem; /* 14px */
+  --fs-body: 1rem; /* 16px */
+  --fs-title: 1.25rem; /* 20px */
+  --fs-subheader: 1.5rem; /* 24px */
+  --fs-header: 2.25rem; /* 34px */
+
+  --clr-primary: #0E1846; 
+  --clr-secondary: #460E18;
+  --clr-accent: #0D2708;
+  --clr-white: #DFDFDF;
+  --clr-black: #1F1F1F;
+
+  /* primary palette (tones) */
+  --clr-primary-100: #393F5C;
+  --clr-primary-300: #2A3254;
+  --clr-primary-600: #1C254D;
+
+  /* secondary palette (tones) */
+  --clr-secondary-100: #5C393F;
+  --clr-secondary-300: #542A32;
+  --clr-secondary-600: #4D1C25;
+
+  /* accent palette (tones) */
+  --clr-accent-100: #384835;
+  --clr-accent-300: #2A3D26;
+  --clr-accent-600: #1B3217;
+
+  /* grays palette */
+  --clr-gray-100: #ADAEAF;
+  --clr-gray-200: #747475;
+  --clr-gray-400: #5D5E60;
+  --clr-gray-600: #3B3D40;
+  --clr-gray-800: #2F3236;
+  --clr-gray-900: #24272b;
+
+  --clr-header: var(--clr-white);
+  --clr-nav: var(--clr-white);
+  --clr-logo: var(--clr-primary);
+  --clr-body: var(--clr-black);
+
+  --header-height: 20vh;
+}
+
 /* reset */
 *,
-body {
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  font: inherit;
+}
+
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--clr-white);
+  font-family: var(--ff-body);
+  background-color: var(--clr-body);
 }
 
 input,
@@ -21,4 +99,24 @@ a,
 li {
   color: inherit;
   text-decoration: none;
+}
+
+button {
+  padding: 5px 10px;
+  color: var(--clr-white);
+  font-size: var(--fs-info);
+  font-family: var(--ff-info);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  border: none;
+  border-radius: 3px;
+  background-color: var(--clr-secondary);
+}
+button:hover {
+  background-color: var(--secondary-color-lite);
+}
+
+/* utility classes */
+.main-page-h {
+  min-height: calc(100vh - var(--header-height));
 }
