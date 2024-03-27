@@ -8,61 +8,28 @@ header {
   justify-content: space-between;
 }
 
-header .logo {
-  width: fit-content;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-header .logo h1 {
-  font-size: 6rem;
-  text-align: center;
-}
-
-/* text height */
-header .logo h1 {
-  transform: scaleY(0.75); 
-}
-header .logo .subheading span {
-  transform: scaleY(0.80);
-}
-
-header .logo h1 a {
-  display: block;
-  color: var(--clr-logo);
-  font-family: var(--ff-logo);
-  font-weight: var(--fw-bold);
-  text-transform: uppercase;
-  margin-left: -5px;
-}
-
-header .logo .subheading {
-  margin-top: -3%;
+header .flex-contents {
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
 }
 
-header .logo .subheading span {
-  color: var(--clr-logo);
-  font-family: var(--ff-logo);
-  font-weight: var(--fw-bold);
-  font-size: 1rem;
-  text-transform: uppercase;
-  word-spacing: 5px;
+header .logo img {
+  padding: 10px;
+  width: 80px;
+}
+
+header .title img {
+  padding: 10px 10px 0 10px;
+  width: 500px;
 }
 
 nav {
-  margin-top: 25px;
   width: 100%;
   min-height: 2vh;
   color: var(--clr-black);
   background-color: var(--clr-nav);
-  border-bottom: 1.5px solid var(--clr-black);
-  /* border-top: 1.5px solid var(--clr-black); */
 }
 
 nav ul {
@@ -88,13 +55,38 @@ nav li a {
   text-transform: uppercase;
 }
 
-nav li a:hover {
+nav li a:hover, nav li a.active {
   background-color: var(--clr-primary);
+  /* background-color: pink; */
   color: var(--clr-white);
 }
 
-/* active NavLink */
-nav li a.active {
+/* About dropdown menu */
+.dropdown-cont {
+  position: relative;
+}
+
+.about-dropdown {
+  display: none;
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  left: 0;
+  background-color: orange;
+  height: fit-content;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.about-dropdown li {
+  display: block;
+}
+
+nav li:hover .about-dropdown {
+  display: block;
+}
+
+.about-dropdown li a:hover, .about-dropdown li a.active {
   background-color: var(--clr-primary);
   color: var(--clr-white);
 }

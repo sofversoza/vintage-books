@@ -53,7 +53,7 @@
 
   --clr-header: var(--clr-white);
   --clr-nav: var(--clr-white);
-  --clr-logo: var(--clr-primary);
+  --clr-logo: var(--clr-primary-600);
   --clr-body: var(--clr-black);
 
   --header-height: 20vh;
@@ -101,7 +101,7 @@ li {
   text-decoration: none;
 }
 
-button {
+/* button {
   padding: 5px 10px;
   color: var(--clr-white);
   font-size: var(--fs-info);
@@ -114,7 +114,7 @@ button {
 }
 button:hover {
   background-color: var(--secondary-color-lite);
-}
+} */
 
 /* utility classes */
 .main-page-h {
