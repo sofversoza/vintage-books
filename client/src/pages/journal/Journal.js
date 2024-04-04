@@ -1,38 +1,48 @@
 import React from "react"
 import { Outlet, NavLink } from "react-router-dom"
-import "../../styles/journal.css"
+import { PageTitle } from "../../styles/ui/StyledTitle"
+import { FlexWrapper } from "../../styles/layout/Wrapper"
+import { PageWrapper, PageFlexWrapper } from "../../styles/layout/PageLayout"
+import {
+	Nav,
+	NavLinkExtended,
+	UlExtended,
+	PageTitleExtended,
+} from "./JournalStyles"
 
 export default function Journal() {
 	return (
-		<div className="journal">
-			<JournalNavigation />
-			<h1>Journal Page</h1>
+		<PageWrapper>
+			<PageFlexWrapper>
+				<PageTitleExtended>The Journal</PageTitleExtended>
+				<JournalNavigation />
+			</PageFlexWrapper>
 			<Outlet />
-		</div>
+		</PageWrapper>
 	)
 }
 
 function JournalNavigation() {
 	return (
-		<nav className="journal-nav">
-			<ul>
+		<Nav>
+			<UlExtended>
 				<li>
-					<NavLink
+					<NavLinkExtended
 						to="columns"
 						className={({ isActive }) => (isActive ? "active" : "")}
 					>
 						Columns
-					</NavLink>
+					</NavLinkExtended>
 				</li>
 				<li>
-					<NavLink
+					<NavLinkExtended
 						to="articles"
 						className={({ isActive }) => (isActive ? "active" : "")}
 					>
 						Articles
-					</NavLink>
+					</NavLinkExtended>
 				</li>
-			</ul>
-		</nav>
+			</UlExtended>
+		</Nav>
 	)
 }

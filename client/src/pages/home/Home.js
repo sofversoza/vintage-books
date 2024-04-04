@@ -1,6 +1,5 @@
 import React from "react"
-import "../styles/home.css"
-import Hero from "../components/hero/Hero"
+import Hero from "./components/Hero"
 
 const Home = () => {
 	return (

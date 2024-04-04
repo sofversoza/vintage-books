@@ -1,6 +1,6 @@
 import React from "react"
 import { Outlet, NavLink } from "react-router-dom"
-import "../../styles/bookstore.css"
+import { Nav, NavLinkExtended, UlExtended } from "./BookstoreStyles"
 
 export default function Bookstore() {
 	return (
@@ -14,25 +14,25 @@ export default function Bookstore() {
 
 function BookstoreNavigation() {
 	return (
-		<nav className="bookstore-nav">
-			<ul>
+		<Nav>
+			<UlExtended>
 				<li>
-					<NavLink
+					<NavLinkExtended
 						to="Bookclub"
 						className={({ isActive }) => (isActive ? "active" : "")}
 					>
 						Bookclub
-					</NavLink>
+					</NavLinkExtended>
 				</li>
 				<li>
-					<NavLink
+					<NavLinkExtended
 						to="book-inventory"
 						className={({ isActive }) => (isActive ? "active" : "")}
 					>
 						Book Inventory
-					</NavLink>
+					</NavLinkExtended>
 				</li>
-			</ul>
-		</nav>
+			</UlExtended>
+		</Nav>
 	)
 }
